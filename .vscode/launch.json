@@ -8,8 +8,9 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost/index.html",
-            "webRoot": "${workspaceRoot}"
+            "url": "http://localhost:15934/index.html",
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true
         }
     ]
 }
