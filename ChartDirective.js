@@ -13,7 +13,10 @@
               renderTo: 'highstockchart'
             },
             title: {
-              text: scope.stockcode + ' from Angular Service'
+              text: scope.stockcode || ''
+            },
+            rangeSelector:{
+                selected: 1
             },
             series: [{
               name: scope.stockcode,
@@ -24,7 +27,6 @@
             }]
           });
           scope.$watch("chartdata", function (newValue) {
-            chart.title.text = scope.stockcode;
             chart.series[0].setData(scope.chartdata, true);
           }, true);
       }};
