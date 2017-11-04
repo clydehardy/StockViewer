@@ -18,6 +18,9 @@
             rangeSelector:{
                 selected: 1
             },
+            xAxis: {
+                type: 'datetime'
+            },
             series: [{
               name: scope.stockcode,
               data: scope.chartdata,
@@ -28,6 +31,10 @@
           });
           scope.$watch("chartdata", function (newValue) {
             chart.series[0].setData(scope.chartdata, true);
+          }, true);
+          scope.$watch("stockcode", function (newValue) {
+            chart.title.text = newValue;
+            chart.series[0].name = newValue;
           }, true);
       }};
     });

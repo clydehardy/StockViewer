@@ -10,7 +10,8 @@
     var onChartData = function(data){
       var cdata = [];
       for (var i = 0; i < data.length; i++){
-        cdata.push(new Array((new Date(data[i][0])).getTime(),data[i][1]));
+        //cdata.push(new Array((new Date(data[i][0])).getTime(),data[i][1]));
+        cdata.unshift(new Array((new Date(data[i][0])).getTime(),data[i][1]));
       }
       $scope.chartdata = cdata;
     };
