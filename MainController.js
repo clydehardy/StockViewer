@@ -3,9 +3,8 @@
   
   var MainController = function($scope,stockService){
     $scope.search = function(stockcode) {
-      
+      $scope.stockcode = stockcode;
       stockService.getStockData(stockcode).then(onChartData, onError);
-
     };
 
     var onChartData = function(data){
